@@ -1,4 +1,5 @@
 import usersApi from "@/services/api/users";
+import router from "@/router";
 const { DateTime } = require("luxon");
 const PICTURE_URL = "https://api.adorable.io/avatars";
 
@@ -54,5 +55,24 @@ export default {
       };
     });
     commit("SET_ADVANCED_USERS", users);
+  },
+  LOGIN({ commit }, { username, password }) {
+    commit("LOGIN_REQUEST", {
+      username
+    });
+
+    usersApi.login(username, password).then(
+      user => {
+        commit("LOGIN_SUCCESS", user);
+        router.push("/users");
+      },
+      error => {
+        commit("LOGIN_FAILURE", error);
+      }
+    );
+  },
+  LOGOUT({ commit }) {
+    usersApi.logout();
+    commit("LOGOUT");
   }
 };
