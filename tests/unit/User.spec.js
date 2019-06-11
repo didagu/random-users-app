@@ -49,6 +49,10 @@ describe("User.vue", () => {
     wrapper = factory();
   });
 
+  afterEach(() => {
+    wrapper.destroy();
+  });
+
   it("computes user data correctly from store", () => {
     expect(wrapper.vm.user).to.be.eql(user);
   });
