@@ -1,33 +1,48 @@
 # randomusers
 
 ## Project setup
+Run the command beow to install the dependencies
 ```
 npm install
+```
+### Create environment variables
+You will need to create an account on (https://randomuser.me)[https://randomuser.me] and created a .env file at the root of the project with the contents as below
+```
+VUE_APP_ROOT_API=https://randomuser.me/api/
+VUE_APP_SEED=<RANDOM-API-USER-NAME>
 ```
 
 ### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
+The application is now running on
+```
+locahost:8080
+```
+
+### Login Credentials
+You can login using any of the credentials below:
+```
+username: "admin"
+password: "admin"
+
+username: "abas-erp"
+password: "abas-erp"
+``` 
+
+### Run your unit tests
+```
+npm run test:unit
+```
 
 ### Compiles and minifies for production
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
 ```
 
 ### Customize configuration
