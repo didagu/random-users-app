@@ -1,12 +1,14 @@
-# randomusers
+# RandomUsersApp
+
+Simple application displaying information from a list of random users in a table as well as extended information for each of the users
 
 ## Project setup
-Run the command beow to install the dependencies
+Run the command below to install the dependencies
 ```
 npm install
 ```
 ### Create environment variables
-You will need to create an account on (https://randomuser.me)[https://randomuser.me] and created a .env file at the root of the project with the contents as below
+You will need to create an account on [HERE](https://randomapi.com/register) and created a .env file at the root of the project with the contents as below
 ```
 VUE_APP_ROOT_API=https://randomuser.me/api/
 VUE_APP_SEED=<RANDOM-API-USER-NAME>
