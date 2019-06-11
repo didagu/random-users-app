@@ -3,7 +3,7 @@
     <b-row align-h="center">
       <b-col cols="8">
         <b-row align-h="center">
-          <img :src="user.thumbnail" id="user_avatar" alt="user avatar">
+          <img :src="image_url" id="user_avatar" alt="user avatar" @click="toggleImage">
         </b-row>
         <br>
         <b-row>
@@ -58,9 +58,26 @@
 <script>
 export default {
   name: "user",
+  data() {
+    return {
+      image_url : ''
+    }
+  },
   computed: {
     user() {
       return this.$store.getters.getUserById;
+    }
+  },
+  created() {
+    this.image_url = this.user.thumbnail
+  },
+  methods: {
+    toggleImage() {
+      if(this.image_url === this.user.thumbnail) {
+        this.image_url = this.user.full_picture
+      } else {
+        this.image_url = this.user.thumbnail
+      }
     }
   }
 };
