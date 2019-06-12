@@ -3,7 +3,7 @@
     <h1>Random Users Table</h1>
     <b-row align-h="center">
       <b-col cols="8">
-        <UsersTable :items="usersBasicInfo" :rows="rows" />
+        <users-table :items="usersBasicInfo" :rows="rows" />
       </b-col>
     </b-row>
   </div>
