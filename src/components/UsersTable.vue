@@ -12,7 +12,6 @@
         :fields="fields"
         :per-page="perPage"
         :current-page="currentPage"
-        :sort-by.sync="sortBy"
         :sort-desc.sync="sortDesc"
         @row-clicked="myRowClickHandler"
         ></b-table>
@@ -31,7 +30,7 @@
 
 <script>
 export default {
-    name: "UsersTable",
+    name: "users-table",
     props:{
         items: Array,
         rows: Number
@@ -40,7 +39,6 @@ export default {
         return {
             perPage: 10,
             currentPage: 1,
-            sortBy: 'age',
             sortDesc: false,
             fields:[
                 { key: 'name', sortable: true },
